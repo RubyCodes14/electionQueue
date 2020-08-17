@@ -1,12 +1,12 @@
 
 noQueue = int(input("Enter length of queue of voters: "))
-Queue = input("Enter Queue(separated with comma): ")
+Queue = input("Enter Queue(separated with space): ")
 
 supportA = 0
 supportB = 0
 neutral = 0
 
-queue = Queue.split(",")
+queue = Queue.split(" ")
 
 start, lastQ = False, False
 #print(queue, len(queue))
@@ -30,12 +30,7 @@ for i in range(noQueue):
                     right = ""
                 else:
                     supportB += 1
-        #elif not(left == "") and right == "":
-            #if left == "A":
-                #supportA += 1
-            #elif left == "B":
-                #supportB += neutral + 1
-                #neutral = 0
+        
         elif not(left == "") and not(right == ""):
             if left == "B" and right == "A":
                 supportA += (int(neutral/2) + 1)
